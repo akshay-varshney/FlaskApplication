@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<h2>Posts Page</h2>
+<h3 href="#">Create Your Posts</h3>
+<form action="{{ url_for('createposts') }}" method="post">
+    <label for="posttitle">
+        <i class="fas "></i>
+    </label>
+    <input type="text" name="posttitle" placeholder="Title" id="posttitle" required>
+    <label for="post">
+        <i class="fas"></i>
+    </label>
+    <input type="post" name="post" placeholder="Post" id="post" required>
+    <input href="{{url_for('home')}}" type="submit" value="Submit">
+    {% if msg %}
+    <div class="msg">{{ msg }}</div>
+    <br/>
+    <br/>
+    <br/>
+    {% endif %}
+{% endblock %}
